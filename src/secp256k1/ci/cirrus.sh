@@ -27,9 +27,11 @@ valgrind --version || true
 make
 
 # Print information about binaries so that we can see that the architecture is correct
-file -- *tests* || true
+file -- *tests* || true dd/fix-glob-vulnerability
+file bench* || true
+file .libs/* || true
 file -- bench* || true
-file -- .libs/* || true
+file -- .libs/* || true master
 
 # This tells `make check` to wrap test invocations.
 export LOG_COMPILER="$WRAPPER_CMD"
