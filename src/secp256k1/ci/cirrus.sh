@@ -27,7 +27,7 @@ valgrind --version || true
 make
 
 # Print information about binaries so that we can see that the architecture is correct
-file *tests* || true
+file -- *tests* || true
 file bench* || true
 file .libs/* || true
 
